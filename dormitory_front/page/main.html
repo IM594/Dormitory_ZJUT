@@ -1,0 +1,344 @@
+<style>
+  .welcome .layui-card {
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+  }
+
+  .welcome .icon {
+    margin-right: 10px;
+    color: #1aa094;
+  }
+
+  .welcome .icon-cray {
+    color: #ffb800 !important;
+  }
+
+  .welcome .icon-blue {
+    color: #1e9fff !important;
+  }
+
+  .welcome .icon-tip {
+    color: #ff5722 !important;
+  }
+
+  .welcome .layuimini-qiuck-module {
+    text-align: center;
+    margin-top: 10px
+  }
+
+  .welcome .layuimini-qiuck-module a i {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 30px;
+    background-color: #F8F8F8;
+    color: #333;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+  }
+
+  .welcome .layuimini-qiuck-module a cite {
+    position: relative;
+    top: 2px;
+    display: block;
+    color: #666;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .welcome .welcome-module {
+    width: 100%;
+    height: 210px;
+  }
+
+  .welcome .panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+  }
+
+  .welcome .panel-body {
+    padding: 10px
+  }
+
+  .welcome .panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: inherit
+  }
+
+  .welcome .label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-top: .3em;
+  }
+
+  .welcome .layui-red {
+    color: red
+  }
+
+  .welcome .main_btn>p {
+    height: 40px;
+  }
+
+  .welcome .layui-bg-number {
+    background-color: #F8F8F8;
+  }
+
+  .welcome .layuimini-notice:hover {
+    background: #f6f6f6;
+  }
+
+  .welcome .layuimini-notice {
+    padding: 7px 16px;
+    clear: both;
+    font-size: 12px !important;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease-in-out;
+  }
+
+  .welcome .layuimini-notice-title,
+  .layuimini-notice-label {
+    padding-right: 70px !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  .welcome .layuimini-notice-title {
+    line-height: 28px;
+    font-size: 14px;
+  }
+
+  .welcome .layuimini-notice-extra {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 16px;
+    display: inline-block;
+    height: 16px;
+    color: #999;
+  }
+</style>
+<div class="layuimini-container layuimini-page-anim">
+  <div class="layuimini-main welcome">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md8">
+        <div class="layui-row">
+          <div class="layui-card" style="height: 420px;">
+            <div class="layui-card-header"><i class="fa fa-warning icon"></i>数据统计</div>
+            <div class="layui-card-body">
+              <div class="welcome-module" style="height: 370px;overflow: auto;">
+                <table class="layui-table" lay-skin="line">
+                  <tr>
+                    <th>楼宇</th>
+                    <th>寝室数量</th>
+                    <th>入住人数</th>
+                    <th>闲置数量</th>
+                    <th>使用率</th>
+                  </tr>
+                  <tbody id="building-data"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="layui-card">
+            <div class="layui-card-header"><i class="fa fa-line-chart icon"></i>图表统计</div>
+            <div class="layui-card-body">
+              <div id="echarts-records" style="min-height:365px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md4">
+        <div class="layui-card" style="height: 420px;">
+          <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
+          <div class="layui-card-body layui-text" id="notice-data"></div>
+        </div>
+        <div class="layui-card">
+          <div class="layui-card-header"><i class="fa fa-fire icon"></i>项目信息</div>
+          <div class="layui-card-body layui-text">
+            <table class="layui-table">
+              <colgroup>
+                <col width="100">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>项目名称</td>
+                  <td>
+                    浙江工业大学寝室管理系统
+                  </td>
+                </tr>
+                <tr>
+                  <td>作者</td>
+                  <td>鲁钊豪</td>
+                </tr>
+                <tr>
+                  <td>后端</td>
+                  <td>SpringBoot</td>
+                </tr>
+                <tr>
+                  <td>前端</td>
+                  <td>Layui框架</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  layui.use(['layer', 'echarts'], function () {
+    var $ = layui.jquery,
+      layer = layui.layer,
+      echarts = layui.echarts;
+
+    if (store.getLoginType() == 1) {
+      $('.welcome').empty();
+      $('.welcome').append(`<div style="margin:16px">欢迎来到浙江工业大学寝室管理系统！</div>`)
+      // $('.welcome').append(`
+      //         <div class="layui-card" style="height: 400px;">
+      //             <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
+      //             <div class="layui-card-body layui-text" id="notice-data-stu"></div>
+      //         </div>
+      //         `);
+      //         loadNoticeByStu();
+
+      return;
+    }
+
+    function loadBuilding() {
+      axios.get('main/building', { limit: 1000 }).then(function (response) {
+        response.data.forEach(item => {
+          let html = `<tr>
+                                <td>${item.name}</td>
+                                <td>${item.all}</td>
+                                <td>${item.used}</td>
+                                <td>${item.unused}</td>
+                                <td>${item.percent}%</td>
+                            </tr>`
+
+          $('#building-data').append(html);
+        })
+      });
+    }
+    loadBuilding();
+    function loadNotice() {
+      axios.get('main/notice').then(function (response) {
+        response.data.forEach(item => {
+          let html = `<div class="layuimini-notice">
+                            <div class="layuimini-notice-title">${item.title}</div>
+                            <div class="layuimini-notice-extra">${item.createTime}</div>
+                            <div class="layuimini-notice-content layui-hide">${item.content}</div>
+                         </div>`
+          $('#notice-data').append(html);
+        })
+      });
+    }
+    loadNotice();
+
+    function loadNoticeByStu() {
+      axios.post('stu/notice_query').then(function (response) {
+        response.data.forEach(item => {
+          let html = `<div class="layuimini-notice">
+                            <div class="layuimini-notice-title">${item.title}</div>
+                            <div class="layuimini-notice-extra">${item.createTime}</div>
+                            <div class="layuimini-notice-content layui-hide">${item.content}</div>
+                         </div>`
+          $('#notice-data-stu').append(html);
+        })
+      });
+    }
+
+
+    /**
+     * 查看公告信息
+     **/
+    $('body').on('click', '.layuimini-notice', function () {
+      let title = $(this).children('.layuimini-notice-title').text(),
+        noticeTime = $(this).children('.layuimini-notice-extra').text(),
+        content = $(this).children('.layuimini-notice-content').html();
+      let html = '<div style="padding:15px 20px; text-align:justify; line-height: 22px;border-bottom:1px solid #e2e2e2;background-color: #eeeeee;color: #222222;">\n' +
+        '<div style="text-align: center;margin-bottom: 20px;font-weight: bold;border-bottom:1px solid #718fb5;padding-bottom: 5px"><h4 class="text-danger">' + title + '</h4></div>\n' +
+        '<div style="font-size: 14px">' + content + '</div>\n' +
+        '</div>\n';
+      parent.layer.open({
+        type: 1,
+        title: '系统公告' + '<span style="float: right;right: 1px;font-size: 12px;color: #b1b3b9;margin-top: 1px">' + noticeTime + '</span>',
+        area: '400px;',
+        shade: 0.8,
+        id: 'layuimini-notice',
+        btn: ['取消'],
+        btnAlign: 'c',
+        moveType: 1,
+        content: html
+      });
+    });
+
+    /**
+     * 图表统计功能
+     */
+
+    function loadReport() {
+      axios.get('main/building', { limit: 1000 }).then(function (response) {
+        let used = response.data.map(item => item.used);
+        let name = response.data.map(item => item.name);
+        loadEchars(name, used);
+      });
+    }
+
+    loadReport();
+
+    function loadEchars(name, values) {
+      let echartsRecords = echarts.init(document.getElementById('echarts-records'), 'walden');
+      let option = {
+        xAxis: {
+          type: 'category',
+          data: name,
+          axisTick: {
+            alignWithLabel: false
+          }
+        },
+        tooltip: {},
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: values,
+          type: 'bar',
+          showBackground: true,
+          backgroundStyle: {
+            color: 'rgba(220, 220, 220, 0.8)'
+          }
+        }]
+      };
+      echartsRecords.setOption(option);
+      window.onresize = function () { // echarts 窗口缩放自适应
+        echartsRecords.resize();
+      }
+    }
+
+
+  });
+</script>
